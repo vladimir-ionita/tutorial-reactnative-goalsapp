@@ -23,6 +23,7 @@ const GoalInput = props => {
                     value={enteredGoal}
                 />
                 <Button title="ADD" onPress={addGoalHandler} />
+                <Button title="CANCEL" color="red" onPress={props.onCancel} />
             </View>
         </Modal>
     )
