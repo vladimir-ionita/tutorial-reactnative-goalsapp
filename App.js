@@ -13,7 +13,7 @@ export default function App() {
     // setCourseGoals([...courseGoals, enteredGoal])
     setCourseGoals(currentGoals => [
       ...currentGoals,
-      { key: Math.random().toString(), value: enteredGoal }
+      { uid: Math.random().toString(), value: enteredGoal }
     ])
   }
 
@@ -32,6 +32,7 @@ export default function App() {
         />
       </View>
       <FlatList
+        keyExtractor={(item, index) => item.uid}
         data={courseGoals}
         renderItem={itemData => (
           <View style={styles.listItem}>
